@@ -14,7 +14,8 @@
     </span>
 
     <span class="b">
-        <a mat-icon-button routerLink="/login">Login</a>
+        <a *ngIf="!loggedIn" mat-icon-button routerLink="/login">Login</a>
+        <a *ngIf= "loggedIn" (click)="logoutUser()" mat-icon-button routerLink="/login">Logout</a>
     </span>
     
 

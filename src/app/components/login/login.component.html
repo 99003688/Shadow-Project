@@ -22,7 +22,7 @@
             <mat-label>password</mat-label>
             <input 
             [(ngModel)]="credentials.password"
-            name="password"
+            name="username"
             required
             type="password" matInput/>
         </mat-form-field>
@@ -32,6 +32,8 @@
         </div>
 
     </form>
+
+   <p> {{credentials |  json}}</p>>
 </div>
      </div>
     </div>

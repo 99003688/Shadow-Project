@@ -6,11 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  url="https://localhost:9595"
+  url="https://localhost:4200"
   constructor(private http:HttpClient) { }
 
 
 // calling hte server to generate token 
+
 
 generateToken(credentials : any){
   //token generated
