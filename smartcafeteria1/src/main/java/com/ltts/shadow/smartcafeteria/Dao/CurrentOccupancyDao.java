@@ -14,6 +14,8 @@ import com.ltts.shadow.smartcafeteria.Models.CurrentOccupancyAverage;
 
 @Repository
 public interface CurrentOccupancyDao extends JpaRepository<CurrentOccupancy, Long> {
+
+	
 	
 //    @Query("SELECT new com.ltts.shadow.smartcafeteria.Models.CurrentOccupancyAverage (AVG(c.count), AVG(c.times)) OVER (ORDER BY c.id ROWS BETWEEN 6 PRECEDING AND 6 FOLLOWING) c.ak FROM CurrentOccupancy c")
 //	public List<CurrentOccupancyAverage> findAverage();

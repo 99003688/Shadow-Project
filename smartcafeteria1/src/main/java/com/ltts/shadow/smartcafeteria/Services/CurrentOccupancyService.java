@@ -32,6 +32,57 @@ public class CurrentOccupancyService {
        }
    }
 	
+
+	public ArrayList<Float> makeList()
+	{		
+		List<CurrentOccupancy> ls =currentOccupancyDao.findAll();
+//		List<CurrentOccupancyAverage> lss =coad.findAll();
+		
+	float sum=0, count=0,  count2=0;
+	ArrayList<Float> average = new ArrayList<Float>();
+	for(CurrentOccupancy a:ls) {
+		
+		sum=sum+a.getCount();
+		count++;
+		count2++;
+		if(count2 != 0 && count2 % 12==0) {	
+			sum= sum/count;
+		    average.add(sum);
+		    sum=0;
+		    count=0;
+			
+		}
+		
+	}
+	return average;
+	
+	}
+	public ArrayList<Integer> makeListTime()
+	{		
+		List<CurrentOccupancy> ls =currentOccupancyDao.findAll();
+
+		
+	int sum=0, count=0,  count2=0;
+	ArrayList<Integer> averagetime = new ArrayList<Integer>();
+	for(CurrentOccupancy a:ls) {
+		
+		int ak=a.getTimes().getMinute();
+		
+		sum=sum+ak;
+		count++;
+		count2++;
+		if(count2 != 0 && count2 % 12==0) {	
+			sum= sum/count;
+			averagetime.add(sum);
+		    sum=0;
+		    count=0;
+			
+		}
+		
+	}
+	return averagetime;
+	
+	}
 //	public List<CurrentOccupancy>findAverageByServ(int count)
 //	{
 //		return currentOccupancyDao.findAverage(count);

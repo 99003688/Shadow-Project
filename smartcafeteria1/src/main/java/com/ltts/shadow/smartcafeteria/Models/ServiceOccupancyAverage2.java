@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "CurrentOccupancyAverage")
-public class CurrentOccupancyAverage {
+@Table(name = "ServiceOccupancyAverage")
+public class ServiceOccupancyAverage2 {
 	
 	@Id
 	@GeneratedValue
@@ -24,7 +24,7 @@ public class CurrentOccupancyAverage {
 	@Column(name="times")
 	private Integer times;
 
-	public CurrentOccupancyAverage(Float a, Integer b) {
+	public ServiceOccupancyAverage2(Float a, Integer b) {
 		
 		this.times=b;
 		this.count=a;
